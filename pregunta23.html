@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo  de event.target</title>
+</head>
+<body>
+
+  <button id="btn1">Botón A</button>
+  <button id="btn2">Botón B</button>
+
+  <p id="mensaje">Haz clic en un botón...</p>
+
+  <script>
+    function mostrarOrigen(event) {
+      document.getElementById('mensaje').textContent = 
+        "Hiciste clic en el: " + event.target.textContent;
+    }
+
+    document.getElementById('btn1').addEventListener('click', mostrarOrigen);
+    document.getElementById('btn2').addEventListener('click', mostrarOrigen);
+  </script>
+
+</body>
+</html>

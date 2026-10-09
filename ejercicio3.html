@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3 - Seguimiento de escritura</title>
+</head>
+<body>
+  <label for="campoEscritura">Escriba algo:</label>
+  <input type="text" id="campoEscritura" placeholder="Escriba aquí...">
+  <p>Vista previa en tiempo real: <span id="vistaPrevia"></span></p>
+
+  <script>
+    const campo = document.getElementById('campoEscritura');
+    const vista = document.getElementById('vistaPrevia');
+
+    campo.addEventListener('input', (event) => {
+      vista.textContent = event.target.value;
+    });
+  </script>
+</body>
+</html>

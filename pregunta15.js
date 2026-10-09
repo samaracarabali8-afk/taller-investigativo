@@ -1,0 +1,1 @@
+elemento.addEventListener(tipoEvento, funcionManejadora, useCapture);

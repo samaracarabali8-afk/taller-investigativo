@@ -1,0 +1,1 @@
+document.getElementById('contenedor').innerHTML = "<p>Texto insertado dinámicamente</p>";

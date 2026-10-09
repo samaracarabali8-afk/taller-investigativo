@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prototipo Plataforma Educativa - ADSO</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .curso { padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px; }
+    .oculto { display: none; }
+  </style>
+</head>
+<body>
+
+  <h2>Plataforma Educativa - Búsqueda de Cursos</h2>
+  <input type="text" id="buscador" placeholder="Buscar curso...">
+
+  <div id="contenedorCursos">
+    <div class="curso">Análisis y Desarrollo de Software (ADSO)</div>
+    <div class="curso">Bases de Datos Relacionales</div>
+    <div class="curso">Diseño de Interfaces Web</div>
+    <div class="curso">Programación en JavaScript</div>
+  </div>
+
+  <script>
+    const buscador = document.getElementById('buscador');
+    const cursos = document.querySelectorAll('.curso');
+
+    buscador.addEventListener('input', (e) => {
+      const texto = e.target.value.toLowerCase();
+
+      cursos.forEach(curso => {
+        const nombreCurso = curso.textContent.toLowerCase();
+        if (nombreCurso.includes(texto)) {
+          curso.classList.remove('oculto');
+        } else {
+          curso.classList.add('oculto');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

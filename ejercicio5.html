@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 5</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="miFormulario">
+    <div>
+      <label>Nombre:</label>
+      <input type="text" id="nombre">
+    </div>
+    <br>
+    <div>
+      <label>Correo:</label>
+      <input type="text" id="correo">
+    </div>
+    <br>
+    <div>
+      <label>Clave:</label>
+      <input type="password" id="clave">
+    </div>
+    <br>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p id="mensajeError" class="error"></p>
+
+  <script>
+    const miFormulario = document.getElementById("miFormulario");
+    const nombre = document.getElementById("nombre");
+    const correo = document.getElementById("correo");
+    const clave = document.getElementById("clave");
+    const mensajeError = document.getElementById("mensajeError");
+
+    miFormulario.addEventListener("submit", function(event) {
+      // Evitar que la página se recargue
+      event.preventDefault();
+
+      // Validar si algún campo está vacío
+      if (nombre.value === "" || correo.value === "" || clave.value === "") {
+        mensajeError.textContent = "Por favor llene todos los campos.";
+      } else {
+        mensajeError.textContent = "";
+        alert("¡Formulario enviado correctamente!");
+      }
+    });
+  </script>
+
+</body>
+</html>

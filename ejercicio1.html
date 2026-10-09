@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1 - Botón interactivo</title>
+</head>
+<body>
+  <p id="parrafoTexto">Texto inicial antes del clic.</p>
+  <button id="btnCambiar">Cambiar Texto</button>
+
+  <script>
+    const parrafo = document.getElementById('parrafoTexto');
+    const boton = document.getElementById('btnCambiar');
+
+    boton.addEventListener('click', () => {
+      parrafo.textContent = "¡El texto ha sido cambiado exitosamente con JavaScript!";
+    });
+  </script>
+</body>
+</html>
